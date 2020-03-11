@@ -2,7 +2,7 @@
 
 ### _Settings_
 0) - Clone or download this repository;
-1) - Choose and download weights and config files for NN from [this](https://pjreddie.com/darknet/yolo/, 'pjreddie') website;
+1) - Choose and download weights and config files for NN from [this](https://pjreddie.com/darknet/yolo) website;
 2) - Put these files in Temp folder;
 3) - pip install -r requirements.txt.
 
