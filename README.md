@@ -1,4 +1,4 @@
-## Count peoples on video on certain frame area
+## Count peoples on video in certain frame area
 
 ### Settings
 0) - Clone or download this repository;
