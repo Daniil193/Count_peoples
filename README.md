@@ -12,6 +12,7 @@ In Base.ipynb set following variables:
   - temp_folder: full path to Temp folder with (coco.names, labelImg.py, predefined_classes.txt);
   - Set names for downloaded weights and config files:
   net, outputlayers = load_pretrained_model(temp_folder, '**model**.weights', '**model**.cfg').
+
 In Jupyter Notebook -> Base.ipynb -> Cell -> Run All
                                 
                                           
