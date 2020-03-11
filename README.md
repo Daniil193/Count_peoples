@@ -13,6 +13,7 @@ In Base.ipynb set following variables:
   - Set names for downloaded weights and config files:
   
   net, outputlayers = load_pretrained_model(temp_folder, '**model**.weights', '**model**.cfg').
+  - After starting all cells, in the labelImg program select and save the necessary area and then close program window.
 
 In Jupyter Notebook -> Base.ipynb -> Cell -> Run All
                                 
