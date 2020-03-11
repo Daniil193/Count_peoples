@@ -16,8 +16,3 @@ In Base.ipynb set following variables:
   - After starting all cells, in the labelImg program select and save the necessary area and then close program window.
 
 In Jupyter Notebook -> Base.ipynb -> Cell -> Run All
-                                
-                                          
-, 'pjreddie.com'
-
- 
