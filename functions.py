@@ -194,8 +194,7 @@ def processing_video(path_to_video, file_name, interval, net, outputlayers, coor
     
     vid.release()
     cv2.destroyAllWindows()
-    
-    return l_temp
+
 
 
 def get_img_for_coord(path_to_video, file_name, temp_folder):
