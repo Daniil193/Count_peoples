@@ -1,0 +1,194 @@
+Skip to content <#start-of-content>
+<https://github.com/> tzutalin <https://github.com/tzutalin> / labelImg
+<https://github.com/tzutalin/labelImg>
+Sign up <https://github.com/join?source=header-repo>
+
+  *
+    Why GitHub?
+                          
+                        Features → <https://github.com/features>
+      o Code review <https://github.com/features/code-review/>
+      o Project management <https://github.com/features/project-management/>
+      o Integrations <https://github.com/features/integrations>
+      o Actions <https://github.com/features/actions>
+      o Packages <https://github.com/features/packages>
+      o Security <https://github.com/features/security>
+      o Team management <https://github.com/features#team-management>
+      o Hosting <https://github.com/features#hosting>
+      o Customer stories → <https://github.com/customer-stories>
+      o Security → <https://github.com/security>
+
+  * Enterprise <https://github.com/enterprise>
+  *
+    Explore
+                          
+                        
+      o Explore GitHub → <https://github.com/explore>
+
+
+            Learn & contribute
+
+      o Topics <https://github.com/topics>
+      o Collections <https://github.com/collections>
+      o Trending <https://github.com/trending>
+      o Learning Lab <https://lab.github.com/>
+      o Open source guides <https://opensource.guide/>
+
+
+            Connect with others
+
+      o Events <https://github.com/events>
+      o Community forum <https://github.community/>
+      o GitHub Education <https://education.github.com/>
+
+  * Marketplace <https://github.com/marketplace>
+  *
+    Pricing
+                           
+                        Plans → <https://github.com/pricing>
+      o Compare plans <https://github.com/pricing#feature-comparison>
+      o Contact Sales <https://enterprise.github.com/contact>
+      o Nonprofit → <https://github.com/nonprofit>
+      o Education → <https://education.github.com/>
+
+  *
+    In this repository All GitHub ↵
+    Jump to ↵
+
+  * No suggested jump to results
+
+  *
+    In this repository All GitHub ↵
+    Jump to ↵
+  *
+    In this repository All GitHub ↵
+    Jump to ↵
+
+Sign in
+<https://github.com/login?return_to=%2Ftzutalin%2FlabelImg%2Fblob%2Fmaster%2Fdata%2Fpredefined_classes.txt>
+Sign up
+<https://github.com/join?source=header-repo&source_repo=tzutalin%2FlabelImg>
+
+
+
+  tzutalin <https://github.com/tzutalin> /
+  *labelImg <https://github.com/tzutalin/labelImg>
+
+  *
+
+  * Watch <https://github.com/login?return_to=%2Ftzutalin%2FlabelImg>
+    345 <https://github.com/tzutalin/labelImg/watchers>
+  * Star <https://github.com/login?return_to=%2Ftzutalin%2FlabelImg>
+    9.9k <https://github.com/tzutalin/labelImg/stargazers>
+  * Fork <https://github.com/login?return_to=%2Ftzutalin%2FlabelImg>
+    3.4k <https://github.com/tzutalin/labelImg/network/members>
+
+Code <https://github.com/tzutalin/labelImg>
+Issues 158 <https://github.com/tzutalin/labelImg/issues>
+Pull requests 25 <https://github.com/tzutalin/labelImg/pulls>
+Actions <https://github.com/tzutalin/labelImg/actions>
+Projects 0 <https://github.com/tzutalin/labelImg/projects>
+Security <https://github.com/tzutalin/labelImg/security/advisories>
+Insights <https://github.com/tzutalin/labelImg/pulse>
+
+Code <https://github.com/tzutalin/labelImg> Issues 158
+<https://github.com/tzutalin/labelImg/issues> Pull requests 25
+<https://github.com/tzutalin/labelImg/pulls> Projects 0
+<https://github.com/tzutalin/labelImg/projects> Actions
+<https://github.com/tzutalin/labelImg/actions> Security
+<https://github.com/tzutalin/labelImg/security/advisories> Pulse
+<https://github.com/tzutalin/labelImg/pulse>
+
+Permalink
+<https://github.com/tzutalin/labelImg/blob/45078ac670390cec1aa41a9d0bfb1472f764c72d/data/predefined_classes.txt>
+
+Dismiss
+
+
+      Join GitHub today
+
+GitHub is home to over 40 million developers working together to host
+and review code, manage projects, and build software together.
+
+Sign up
+<https://github.com/join?source=prompt-blob-show&source_repo=tzutalin%2FlabelImg>
+
+/Branch:/ master
+
+Find file <https://github.com/tzutalin/labelImg/find/master>
+Copy path
+
+
+    labelImg <https://github.com/tzutalin/labelImg>/data <https://github.com/tzutalin/labelImg/tree/master/data>/*predefined_classes.txt*
+
+Find file <https://github.com/tzutalin/labelImg/find/master>
+Copy path
+
+@tzutalin <https://github.com/tzutalin> tzutalin
+<https://github.com/tzutalin> allow opening of directory on launch
+<https://github.com/tzutalin/labelImg/commit/d43613d9c4a0fa8acce9157654567176644c000d>
+d43613d
+<https://github.com/tzutalin/labelImg/commit/d43613d9c4a0fa8acce9157654567176644c000d>
+on 29 Jan 2018
+*1* contributor
+
+
+      Users who have contributed to this file
+
+15 lines (15 sloc) 145 Bytes
+Raw
+<https://github.com/tzutalin/labelImg/raw/master/data/predefined_classes.txt>
+Blame
+<https://github.com/tzutalin/labelImg/blame/master/data/predefined_classes.txt>
+History
+<https://github.com/tzutalin/labelImg/commits/master/data/predefined_classes.txt>
+
+<https://desktop.github.com/>
+	dog
+	person
+	cat
+	tv
+	car
+	meatballs
+	marinara sauce
+	tomato soup
+	chicken noodle soup
+	french onion soup
+	chicken breast
+	ribs
+	pulled pork
+	hamburger
+	cavity
+
+  *
+    Copy lines
+
+  *
+    Copy permalink
+
+  * View git blame
+    <https://github.com/tzutalin/labelImg/blame/45078ac670390cec1aa41a9d0bfb1472f764c72d/data/predefined_classes.txt>
+  * Reference in new issue <https://github.com/tzutalin/labelImg/issues/new>
+
+Go
+
+  * © 2020 GitHub, Inc.
+  * Terms <https://github.com/site/terms>
+  * Privacy <https://github.com/site/privacy>
+  * Security <https://github.com/security>
+  * Status <https://githubstatus.com/>
+  * Help <https://help.github.com/>
+
+<https://github.com/>
+
+  * Contact GitHub <https://github.com/contact>
+  * Pricing <https://github.com/pricing>
+  * API <https://developer.github.com/>
+  * Training <https://training.github.com/>
+  * Blog <https://github.blog/>
+  * About <https://github.com/about>
+
+You can’t perform that action at this time.
+You signed in with another tab or window. Reload to refresh your
+session. You signed out in another tab or window. Reload to refresh your
+session.
