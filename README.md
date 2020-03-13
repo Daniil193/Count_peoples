@@ -8,7 +8,7 @@
 
 ### **Warning**
 
-In Best practices: Use ffmpeg instead cv2 for reading frames and determining time for certain frame
+In Best practices: Use ffmpeg instead cv2 for reading frames and determining time for certain frame. This will be fixed later.
 
 ### _Run processing video_
 In Base.ipynb set following variables:
