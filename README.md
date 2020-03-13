@@ -6,7 +6,9 @@
 2) - Put these files in Temp folder;
 3) - pip install -r requirements.txt.
 
-**Warning:** Use ffmpeg instead cv2 for reading frames and determining time for certaing frame
+**Warning**
+
+Best practices: Use ffmpeg instead cv2 for reading frames and determining time for certain frame
 
 ### _Run processing video_
 In Base.ipynb set following variables:
