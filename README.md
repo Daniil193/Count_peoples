@@ -11,7 +11,7 @@ Some videos contains incorrect FPS values. Therefore, it is necessary to do the 
 1) - Use ffmpeg for get duration of video;
 2) - With cv2.cap_prop_frame_count get total number of frame;
 3) - Calculate fps;
-4) - Get certain frame videocap.set()
+4) - Get certain frame with used videocap.set()
 
 ### _Run processing video_
 In Base.ipynb set following variables:
