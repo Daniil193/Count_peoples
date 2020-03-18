@@ -6,9 +6,12 @@
 2) - Put these files in Temp folder;
 3) - pip install -r requirements.txt.
 
-### **Warning**
-
-In Best practices: Use ffmpeg instead cv2 for reading frames and determining time for certain frame. This will be fixed later.
+### **Warning, this will be fixed later**
+It happens that the video contains incorrect FPS values. Therefore, it is necessary to do the following manipulations.
+1) - Use ffmpeg for get duration of video;
+2) - With cv2.cap_prop_frame_count get total number of frame;
+3) - Calculate fps;
+4) - Get certain frame videocap.set()
 
 ### _Run processing video_
 In Base.ipynb set following variables:
