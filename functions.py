@@ -156,19 +156,21 @@ def processing_image(image, net, outputlayers, treshold):
     return boxes, confidences
 
 
-def processing_video(path_to_video, file_name, interval, net, outputlayers, coordinates):
+def processing_video(path_to_video, file_name, interval, net, outputlayers, coordinates, path_to_temp_folder, threshold):
     """
     Processing videos for count person in frame
     Input:
           - path_to_video: (string)
+          - path_to_temp_folder: (string)
           - file_name: (string) - name video file for processing
           - interval: (integer) - frame rate for processing or how many seconds between video fragment processing
           - net: loaded model in cv2.dnn.readNet
           - outputlayers: last layers of the net
           - coordinates: (tuple of integers) - xmin, ymin, xmax, ymax
+          - threshold: assessment of relation to a person
     """
     vid = cv2.VideoCapture(path_to_video + file_name)
-    fps = 17#vid.get(cv2.CAP_PROP_FPS) ## work incorrect     SET FPS FOR PROCESSING
+    fps = vid.get(cv2.CAP_PROP_FPS) ##not always work incorrect     SET FPS FOR PROCESSING
     frame_per_time = fps * interval
     
     xmin, ymin, xmax, ymax = coordinates
@@ -176,17 +178,21 @@ def processing_video(path_to_video, file_name, interval, net, outputlayers, coor
     success, frame = vid.read()
     while success:
         
-        if count_frame % frame_per_time == 0:
+        if (count_frame % frame_per_time == 0) or (count_frame == int(vid.get(cv2.CAP_PROP_FRAME_COUNT))):
             
             crop_frame = frame[ymin:ymax, xmin:xmax]
-            boxes, confidences = processing_image(crop_frame, net, outputlayers, 0.37) #### SET TRESHOLD FOR PROCESSING ~ 0.37
+            boxes, confidences = processing_image(crop_frame, net, outputlayers, threshold) #### SET TRESHOLD FOR PROCESSING ~ 0.37
             boxes, confidences = drop_duplicated_box(boxes, confidences)
             write_to_txt(file_name, fps, count_frame, boxes)
             
             ##################################### save images #########################################            
-            if len(boxes) > 0:
+            if len(boxes) > 0:  ## if count people more then 0
+                
+                if not os.path.exists(path_to_temp_folder+'images'):
+                    os.makedirs(path_to_temp_folder+'images')
+                
                 draw_rectangles_on_img(boxes, confidences, crop_frame)
-                cv2.imwrite(f'temp/images/frame_{count_frame}.jpg', crop_frame)
+                cv2.imwrite(path_to_temp_folder + f'images/frame_{str(count_frame/fps)}+_sec.jpg', crop_frame)
             ##################################### save images #########################################
         
         success, frame = vid.read()
