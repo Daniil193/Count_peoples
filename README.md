@@ -7,7 +7,7 @@
 3) - pip install -r requirements.txt.
 
 ### **Warning, this will be fixed later**
-Some videos contains incorrect FPS values. Therefore, it is necessary to do the following manipulations.
+Some videos contains incorrect FPS information. Therefore, it is necessary to do the following manipulations.
 1) - Use ffmpeg for get duration of video;
 2) - With cv2.cap_prop_frame_count get total number of frame;
 3) - Calculate fps;
