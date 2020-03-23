@@ -1,5 +1,7 @@
 ## Count peoples on video in certain frame area
 
+### More info on [this](https://newtechaudit.ru/ai-v-analize-video/) website 
+
 ### _Settings_
 0) - Clone or download this repository;
 1) - Choose and download weights and config files for NN from [this](https://pjreddie.com/darknet/yolo) website;
