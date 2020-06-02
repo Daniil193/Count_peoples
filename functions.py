@@ -147,7 +147,7 @@ def processing_image(image, net, outputlayers, treshold):
     
     height, width, channels = image.shape
     
-    blob = cv2.dnn.blobFromImage(image, 0.00392, (320, 320), (0,0,0), True, crop=False) ## SET IMAGE SIZE, quickly ~ 320*320
+    blob = cv2.dnn.blobFromImage(image, 0.00392, (320, 320), (0,0,0), True, crop=False) ## set image size, quickly ~ 320*320
     net.setInput(blob)
     outs = net.forward(outputlayers)
     
@@ -156,51 +156,37 @@ def processing_image(image, net, outputlayers, treshold):
     return boxes, confidences
 
 
-def processing_video(path_to_video, file_name, interval, net, outputlayers, coordinates, path_to_temp_folder, threshold):
-    """
-    Processing videos for count person in frame
-    Input:
-          - path_to_video: (string)
-          - path_to_temp_folder: (string)
-          - file_name: (string) - name video file for processing
-          - interval: (integer) - frame rate for processing or how many seconds between video fragment processing
-          - net: loaded model in cv2.dnn.readNet
-          - outputlayers: last layers of the net
-          - coordinates: (tuple of integers) - xmin, ymin, xmax, ymax
-          - threshold: assessment of relation to a person
-    """
+def processing_video(path_to_video, file_name, interval, net, outputlayers, coordinates):
+    
     vid = cv2.VideoCapture(path_to_video + file_name)
-    fps = vid.get(cv2.CAP_PROP_FPS) ##not always work incorrect     SET FPS FOR PROCESSING
+    fps = 25#vid.get(cv2.CAP_PROP_FPS) ## work incorrect
     frame_per_time = fps * interval
     
     xmin, ymin, xmax, ymax = coordinates
     count_frame = 1
     success, frame = vid.read()
+    l_temp = []
     while success:
         
-        if (count_frame % frame_per_time == 0) or (count_frame == int(vid.get(cv2.CAP_PROP_FRAME_COUNT))):
+        if count_frame % frame_per_time == 0:
             
             crop_frame = frame[ymin:ymax, xmin:xmax]
-            boxes, confidences = processing_image(crop_frame, net, outputlayers, threshold) #### SET TRESHOLD FOR PROCESSING ~ 0.37
+            boxes, confidences = processing_image(crop_frame, net, outputlayers, 0.37) #### set treshold
             boxes, confidences = drop_duplicated_box(boxes, confidences)
+            l_temp.append(boxes)
             write_to_txt(file_name, fps, count_frame, boxes)
             
-            ##################################### save images #########################################            
-            if len(boxes) > 0:  ## if count people more then 0
-                
-                if not os.path.exists(path_to_temp_folder+'images'):
-                    os.makedirs(path_to_temp_folder+'images')
-                
+            if len(boxes) > 0:
                 draw_rectangles_on_img(boxes, confidences, crop_frame)
-                cv2.imwrite(path_to_temp_folder + f'images/frame_{str(count_frame/fps)}+_sec.jpg', crop_frame)
-            ##################################### save images #########################################
+                cv2.imwrite(f'temp/images/frame_{count_frame}.jpg', crop_frame)
         
         success, frame = vid.read()
         count_frame += 1
     
     vid.release()
     cv2.destroyAllWindows()
-
+    
+    return l_temp
 
 
 def get_img_for_coord(path_to_video, file_name, temp_folder):
@@ -240,6 +226,74 @@ def get_x_y_from_xml(path_to_file):
 
 
 def drop_duplicated_box(boxes, confidences):
+    
+    res = nms(boxes, confidences, 0.5)
+    
+   
+    return res[0], res[1]
+
+
+
+def nms(bounding_boxes, confidence_score, threshold):
+    # If no bounding boxes, return empty list
+    if len(bounding_boxes) == 0:
+        return [], []
+
+    # Bounding boxes
+    boxes = np.array(bounding_boxes)
+
+    # coordinates of bounding boxes
+    start_x = boxes[:, 0]
+    start_y = boxes[:, 1]
+    end_x = boxes[:, 2]
+    end_y = boxes[:, 3]
+
+    # Confidence scores of bounding boxes
+    score = np.array(confidence_score)
+
+    # Picked bounding boxes
+    picked_boxes = []
+    picked_score = []
+
+    # Compute areas of bounding boxes
+    areas = (end_x - start_x + 1) * (end_y - start_y + 1)
+
+    # Sort by confidence score of bounding boxes
+    order = np.argsort(score)
+
+    # Iterate bounding boxes
+    while order.size > 0:
+        # The index of largest confidence score
+        index = order[-1]
+
+        # Pick the bounding box with largest confidence score
+        picked_boxes.append(bounding_boxes[index])
+        picked_score.append(confidence_score[index])
+
+        # Compute ordinates of intersection-over-union(IOU)
+        x1 = np.maximum(start_x[index], start_x[order[:-1]])
+        x2 = np.minimum(end_x[index], end_x[order[:-1]])
+        y1 = np.maximum(start_y[index], start_y[order[:-1]])
+        y2 = np.minimum(end_y[index], end_y[order[:-1]])
+
+        # Compute areas of intersection-over-union
+        w = np.maximum(0.0, x2 - x1 + 1)
+        h = np.maximum(0.0, y2 - y1 + 1)
+        intersection = w * h
+
+        # Compute the ratio between intersection and union
+        ratio = intersection / (areas[index] + areas[order[:-1]] - intersection)
+
+        left = np.where(ratio < threshold)
+        order = order[left]
+
+    return picked_boxes, picked_score
+
+
+
+
+
+def drop_duplicated_box_old(boxes, confidences):
     
     new_boxes = []
     new_confidences = []
